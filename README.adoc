@@ -1,0 +1,11 @@
+== Project structure
+
+The project consists of 2 modules:
+
+* `model` module:
+    contains the JPA model consisting of a very simple `TestEntity` Entity.
+* `service` module:
+    contains a `TestEntityService` class with transactional methods to persist, merge and retrieve a `TestEntity` and a `MergeEntityResource` class exposing rest endpoints to persist, merge and retrieve a `TestEntity`
+
+The project has a `MergeADetachedEntityTest` test class with on method `testIt`, the test consists in persisting a `TestEntity` then calling the merge rest service passing a json representation of the persisted `TestEntity` with the `name` and `surname` attributes changed and finally retrieving the persisted entity checking the values were effectively modified.
+
