@@ -7,15 +7,19 @@
 package org.dreab8;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.RequestScoped;
 import javax.transaction.Transactional;
+
+import org.dreab8.lock.Lock;
+import org.dreab8.lock.LockType;
 
 /**
  * @author Andrea Boriero
  */
 @ApplicationScoped
 @Transactional
+@Lock(LockType.READ)
 public class TestEntityService extends AbstractRepository {
+
 
 	public void merge(TestEntity testEntity) {
 		em.merge( testEntity );
