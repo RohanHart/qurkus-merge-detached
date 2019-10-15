@@ -7,42 +7,25 @@
 package org.dreab8;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
+import javax.enterprise.context.RequestScoped;
 import javax.transaction.Transactional;
 
 /**
  * @author Andrea Boriero
  */
 @ApplicationScoped
-public class TestEntityService {
+@Transactional
+public class TestEntityService extends AbstractRepository {
 
-	@Inject
-	EntityManager em;
-
-	@Transactional
 	public void merge(TestEntity testEntity) {
 		em.merge( testEntity );
 	}
 
-	@Transactional
-	public String getEntityName(Long id) {
-		TestEntity entity = em.find( TestEntity.class, id );
-		return entity.getName();
-	}
-
-	@Transactional
 	public TestEntity find(Long id) {
 		return em.find( TestEntity.class, id );
 	}
 
-	@Transactional
-	public String getEntitySurname(Long id) {
-		TestEntity entity = em.find( TestEntity.class, id );
-		return entity.surname;
-	}
 
-	@Transactional
 	public TestEntity persist( String name) {
 		TestEntity entity = new TestEntity();
 		entity.setName( name );

@@ -15,37 +15,39 @@ import javax.persistence.Id;
  * @author Andrea Boriero
  */
 @Entity
-public class TestEntity {
+public class TestEntity extends AbstractTestEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "myEntitySeq")
-    private long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "myEntitySeq")
+	private long id;
 
-    public String surname;
+	public String surname;
 
-    private String name;
+	private String name;
 
-    public TestEntity() {
-    }
+	public TestEntity() {
+	}
 
-    public TestEntity(String name) {
-        this.name = name;
-    }
+	public TestEntity(String name) {
+		this.name = name;
+	}
 
-    public long getId() {
-        return id;
-    }
+	@Override
+	public long getId() {
+		return id;
+	}
 
-    public void setId(long id) {
-        this.id = id;
-    }
+	@Override
+	public void setId(long id) {
+		this.id = id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
 }
