@@ -8,16 +8,6 @@ import javax.persistence.Id;
  * @author Andrea Boriero
  */
 @Entity
-public class Client {
-    @Id
-    @GeneratedValue
-    private Long id;
+public class Client extends AbstractModel {
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 }
