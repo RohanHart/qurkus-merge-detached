@@ -8,6 +8,8 @@ package org.dreab8;
 
 import javax.ws.rs.core.MediaType;
 
+import io.quarkus.test.common.QuarkusTestResource;
+import io.quarkus.test.h2.H2DatabaseTestResource;
 import org.junit.jupiter.api.Test;
 
 import io.quarkus.test.junit.QuarkusTest;
@@ -21,6 +23,7 @@ import static org.hamcrest.Matchers.is;
  * @author Andrea Boriero
  */
 @QuarkusTest
+@QuarkusTestResource(H2DatabaseTestResource.class)
 public class MergeADetachedEntityTest {
 	private final static String expectedNameAfterMerge = "modified_name";
 	private final static String expectedSurnameAfterMerge = "modified_surname";
