@@ -19,8 +19,7 @@
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-resteasy-jsonb</artifactId>
-      <version>${quarkus.version}</version>
+      <artifactId>quarkus-resteasy-jackson</artifactId>
     </dependency>
   </dependencies>
   <profiles>
